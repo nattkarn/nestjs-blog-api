@@ -10,13 +10,16 @@ import { AuthController } from './auth/auth.controller';
 import { UsersController } from './users/users.controller';
 import { PrismaService } from './prisma/prisma.service';
 import { PostsModule } from './posts/posts.module';
+import { CategoriesModule } from './categories/categories.module';
+import { TagsModule } from './tags/tags.module';
+import { CommentsModule } from './comments/comments.module';
 
 
 @Module({
   imports: [ConfigModule.forRoot({
     isGlobal: true,
     envFilePath: '.env',
-  }) ,UsersModule, AuthModule, PrismaModule, PostsModule],
+  }) ,UsersModule, AuthModule, PrismaModule, PostsModule, CategoriesModule, TagsModule, CommentsModule],
   controllers: [AppController],
   providers: [AppService, JwtStrategy, PrismaService]
 })
